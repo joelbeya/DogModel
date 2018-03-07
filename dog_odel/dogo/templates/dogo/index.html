@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+
+    {% block content %}
+  <h1>On a </h1> <h1 style="color:green">{{dog|length}} </h1> <h1> articles </h1>
+   <h7>
+   <pre>
+       {% for doga in dog %}
+          <a href="{% url 'dogo:show' doga.id%}">{{doga.id}}/ {{doga.title|upper}} {{doga.body|truncatewords:2}}</a>
+          <!--a href="/dogo/dog/{{doga.id}}">{{doga.id}}/ {{doga.title|upper}} {{doga.body|truncatewords:2}}</a-->
+       {% endfor %}
+   </pre>
+   </h7>
+   <a href="{% url 'home' %}">Bon zonga ndaku, Rwandais !</a>
+
+
+       {% endblock content %}
