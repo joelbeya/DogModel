@@ -1,20 +1,50 @@
 from django.db import models
 from django.conf import settings
 
-# Create your models here.
-
 class Race(models.Model):
-    taille = models.CharField(max_length = 255)
     nom_race = models.CharField(max_length = 255)
+    taille = models.IntegerField()
     morphologie = models.CharField(max_length = 255)
-    traits_comportementaux = models.TextField(max_length = 255)
+    traits_comportementaux = models.CharField(max_length = 255)
+
+    @classmethod
+    def all(self):
+        return Race.objects.all()
+
+    @classmethod
+    def find(self, key):
+        try:
+            return Race.objects.filter(id=key)
+        except:
+            raise Http404('Google who are you {} ?')
+
+    def __str__(self):
+        return self.nom_race
+
+
+
 
 class Proprietaire(models.Model):
     nom = models.CharField(max_length=255)
-    prenom = models.CharField(null=True, max_length=255)
-    dateDeNaissance= models.DateField()
+    prenom = models.CharField(max_length=255, null=True)
+    date_naissance= models.DateField()
     adresse = models.CharField(max_length=255)
-    sexe = models.CharField(max_length=1)
+    sexe = models.BooleanField()
+
+    @classmethod
+    def all(self):
+        return Proprietaire.objects.all()
+
+    @classmethod
+    def find(self, key):
+        try:
+            return Proprietaire.objects.filter(id=key)
+        except:
+            raise Http404('Google who are you {} ?')
+
+    def __str__(self):
+        return self.nom
+
 
 
 class Chien(models.Model):
@@ -27,12 +57,17 @@ class Chien(models.Model):
     race = models.ForeignKey(Race,on_delete=models.CASCADE)
     pere = models.ForeignKey('self', on_delete=models.CASCADE,null=True,blank=True,related_name='enfant_pere')
     mere = models.ForeignKey('self', on_delete=models.CASCADE,null=True,blank=True,related_name='enfant_mere')
+    
+    @classmethod
+    def all(self):
+        return Chien.objects.all()
 
-    #sexe_choice = (
-        #('Male', 'M'),
-        #('Femelle', 'F'),
-    #)
-    #sexe = models.CharField(max_length=1,choices=sexe_choice,blank=True)
+    @classmethod
+    def find(self, key):
+        try:
+            return Chien.objects.filter(id=key)
+        except:
+            raise Http404('Google who are you {} ?')
 
     def __str__(self):
         return self.nom

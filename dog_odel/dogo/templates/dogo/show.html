@@ -1,11 +1,11 @@
 {% extends 'layouts/base.html' %}
 
     {% block content %}
-    <h1>Dog's {{doga.id}} detail  </h1>
-    <h2>{{doga.title}}</h2>
-    <h3>{{doga.body}}</h3>
+    	<h1>Objet {{objet.id}} detail  </h1>
+    	<h2>{{objet.title}}</h2>
+    	<h3>{{objet.body}}</h3>
 
-    <p>
-      <a href="{% url 'dogo:index' %}">Joel Beya</a>
-    </p>
+    	<p>
+      		<a href="{% url 'dogo:index' %}">Joel Beya</a>
+    	</p>
     {% endblock content %}
