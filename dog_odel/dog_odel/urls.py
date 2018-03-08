@@ -22,8 +22,8 @@ handler500 = 'dog_MO.views.handler500'
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^about/$', views.about, name='about'),
-    url(r'^contact/$', views.contact, name='contact'),
-    url(r'^dogo/', include('dogo.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^about$', views.about, name='about'),
+    url(r'^contact$', views.contact, name='contact'),
+    url(r'^dogo', include('dogo.urls')),
+    url(r'^admin', admin.site.urls),
 ]
