@@ -25,3 +25,14 @@ class Chien(models.Model):
     sexe = models.CharField(max_length=1)
     proprio = models.ForeignKey(Proprietaire,on_delete=models.CASCADE)
     race = models.ForeignKey(Race,on_delete=models.CASCADE)
+    pere = models.ForeignKey('self', on_delete=models.CASCADE,null=True,blank=True,related_name='enfant_pere')
+    mere = models.ForeignKey('self', on_delete=models.CASCADE,null=True,blank=True,related_name='enfant_mere')
+
+    #sexe_choice = (
+        #('Male', 'M'),
+        #('Femelle', 'F'),
+    #)
+    #sexe = models.CharField(max_length=1,choices=sexe_choice,blank=True)
+
+    def __str__(self):
+        return self.nom
