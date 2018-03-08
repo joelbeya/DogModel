@@ -14,7 +14,7 @@ class Race(models.Model):
     @classmethod
     def find(self, key):
         try:
-            return Race.objects.filter(id='key')
+            return Race.objects.filter(pk=key)
         except:
             raise Http404('Google who are you {} ?')
 
@@ -38,7 +38,7 @@ class Proprietaire(models.Model):
     @classmethod
     def find(self, key):
         try:
-            return Proprietaire.objects.filter(id='key')
+            return Proprietaire.objects.filter(pk=key)
         except:
             raise Http404('Google who are you {} ?')
 
@@ -65,7 +65,7 @@ class Chien(models.Model):
     @classmethod
     def find(self, key):
         try:
-            return Chien.objects.filter(id='key')
+            return Chien.objects.filter(pk=key)
         except:
             raise Http404('Google who are you {} ?')
 

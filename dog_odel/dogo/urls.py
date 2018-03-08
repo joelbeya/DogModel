@@ -7,5 +7,5 @@ app_name='dogo'
 urlpatterns = [
 	url(r'^index/$', views.index, name='index'),
     url(r'^(?P<obj>[A-Za-z]*)/$', views.requete),
-    url(r'^(?P<obj>[A-Za-z]*)/(?P<key>[0-9]+)/$', views.show),
+    url(r'^(?P<obj>[A-Za-z]*)/(?P<key>[0-9]*)/$', views.show),
 ]
