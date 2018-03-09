@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 
 class Race(models.Model):
-    nom_race = models.CharField(max_length = 255)
+    nom = models.CharField(max_length = 255)
     taille = models.IntegerField()
     morphologie = models.CharField(max_length = 255)
     traits_comportementaux = models.CharField(max_length = 255)
@@ -14,12 +14,12 @@ class Race(models.Model):
     @classmethod
     def find(self, key):
         try:
-            return Race.objects.filter(id=key)
+            return Race.objects.filter(pk=key)
         except:
             raise Http404('Google who are you {} ?')
 
     def __str__(self):
-        return self.nom_race
+        return self.nom
 
 
 
@@ -38,7 +38,7 @@ class Proprietaire(models.Model):
     @classmethod
     def find(self, key):
         try:
-            return Proprietaire.objects.filter(id=key)
+            return Proprietaire.objects.filter(pk=key)
         except:
             raise Http404('Google who are you {} ?')
 
@@ -65,7 +65,7 @@ class Chien(models.Model):
     @classmethod
     def find(self, key):
         try:
-            return Chien.objects.filter(id=key)
+            return Chien.objects.filter(pk=key)
         except:
             raise Http404('Google who are you {} ?')
 
