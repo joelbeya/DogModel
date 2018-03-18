@@ -10,3 +10,7 @@ class Subscribe(forms.Form):
     )
     sexe = forms.ChoiceField(label='Your civility', choices=choix)
     birth = forms.DateField()
+    password = forms.CharField(widget=forms.PasswordInput)
+    widgets = {
+            'password': forms.PasswordInput(),
+        }

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include, handler404, handler500
+from django.urls import path
 from . import views
 
 handler404 = 'dog_MO.views.handler404'
@@ -25,5 +26,5 @@ urlpatterns = [
     url(r'^about$', views.about, name='about'),
     url(r'^contact$', views.contact, name='contact'),
     url(r'^dogo', include('dogo.urls')),
-    url(r'^admin', admin.site.urls),
+    path('admin/', admin.site.urls),
 ]

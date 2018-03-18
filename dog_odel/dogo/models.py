@@ -71,3 +71,27 @@ class Chien(models.Model):
 
     def __str__(self):
         return self.nom
+
+
+
+class User(models.Model):
+    mail = models.CharField(max_length=255)
+    password = models.CharField(max_length=500)
+    nom = models.CharField(max_length=255)
+    prenom = models.CharField(max_length=255)
+    sexe = models.CharField(max_length=1)
+    date_naissance = models.DateField()
+
+    @classmethod
+    def all(self):
+        return Chien.objects.all()
+
+    @classmethod
+    def find(self, key):
+        try:
+            return Chien.objects.filter(pk=key)
+        except:
+            raise Http404('Google who are you {} ?')
+
+    def __str__(self):
+        return self.mail
