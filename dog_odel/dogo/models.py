@@ -84,12 +84,12 @@ class User(models.Model):
 
     @classmethod
     def all(self):
-        return Chien.objects.all()
+        return User.objects.all()
 
     @classmethod
     def find(self, key):
         try:
-            return Chien.objects.filter(pk=key)
+            return User.objects.filter(pk=key)
         except:
             raise Http404('Google who are you {} ?')
 

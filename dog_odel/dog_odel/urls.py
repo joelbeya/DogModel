@@ -25,6 +25,6 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^about$', views.about, name='about'),
     url(r'^contact$', views.contact, name='contact'),
-    url(r'^dogo', include('dogo.urls')),
+    url(r'^dogo/', include('dogo.urls')),
     path('admin/', admin.site.urls),
 ]

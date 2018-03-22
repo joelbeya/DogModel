@@ -20,4 +20,7 @@ def show(request, obj, key):
     return render(request, 'dogo/show.html', {'objet':objet})
 
 def formu(request):
-    return render(request, 'dogo/formu.html', {'form':Subscribe})
+	return render(request, 'dogo/formu.html', {'form':Subscribe})
+
+def formu_submit(request):
+	return affiche(request)
