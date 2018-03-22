@@ -24,3 +24,9 @@ def formu(request):
 
 def formu_submit(request):
 	return affiche(request)
+
+def login(request):
+	return render(request, 'dogo/login.html', {'form':Login})
+
+def sub(request):
+	return log(request)
