@@ -1,8 +1,8 @@
 /*!
- * Start Bootstrap - Business Casual (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+* Start Bootstrap - Business Casual (http://startbootstrap.com/)
+* Copyright 2013-2016 Start Bootstrap
+* Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+*/
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -193,48 +193,53 @@ footer p {
 
 /*  CUSTOM  */
 .brand a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 .brand a:hover {
-  color: #999;
-  text-decoration: none;
+    color: #999;
+    text-decoration: none;
 }
 
 .artist_name {
-  font-size: 20px;
-  font-weight: normal;
+    font-size: 20px;
+    font-weight: normal;
 }
 
 .intro-text {
-  font-size: 40px;
-  font-weight: 300;
+    font-size: 40px;
+    font-weight: 300;
 }
 
 .detail-separator {
-  padding-bottom: 25px;
+    padding-bottom: 25px;
 }
 
 .clearfix {
-  padding-bottom: 40px;
+    padding-bottom: 40px;
 }
 
 #search_form {
-  width: 43%;
-  margin: auto;
-  text-align: center;
+    width: 43%;
+    margin: auto;
+    text-align: center;
 }
 
 .form-group.has-feedback .form-control {
-  padding: 6px 5px;
-  color: red;
+    padding: 6px 5px;
+    color: red;
 }
 
 .errorlist {
-  margin: 10px auto;
+    margin: 10px auto;
 }
 
 .errorlist .error {
-  color: red;
+    color: red;
+}
+
+#index_span {
+    float: left;
+    display: block;
 }

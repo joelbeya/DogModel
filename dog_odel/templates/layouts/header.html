@@ -1,6 +1,15 @@
 <header>
-    <nav id="nav_header">
-        {% load static %}
-        <span id="index_span"><a href="{% url 'dogo:index' %}"><img src="{% static 'dogo/img/dog-paw.svg' %}" alt="Accueil" width="50px"/></a></span>
+    {% load static %}
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <span id="index_span"><a href="{% url 'dogo:index' %}"><img src="{% static 'dogo/img/dog-paw.svg' %}" alt="Accueil" title="Accueil" width="40px"/></a></span>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a data-toggle="modal" href="#modal_inscription"><span class="glyphicon glyphicon-user"></span>Inscription</a></li>
+          <li><a data-toggle="modal" href="#modal_connexion"><span class="glyphicon glyphicon-log-in"></span>Connexion</a></li>
+        </ul>
+      </div>
     </nav>
+    {% include 'dogo/login.html' %}
+    {% include 'dogo/formu.html' %}
 </header>
