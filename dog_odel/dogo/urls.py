@@ -8,6 +8,8 @@ urlpatterns = [
 	url(r'^index$', views.index, name='index'),
 	url(r'^formu$', views.formu),
 	url(r'^subscribe', views.formu_submit),
+	url(r'^login', views.login),
+	url(r'^trylog', views.sub),
     url(r'^(?P<obj>[A-Za-z]*)$', views.requete),
     url(r'^(?P<obj>[A-Za-z]*)/(?P<key>[0-9]*)$', views.show),
 
