@@ -1,0 +1,4 @@
+jojo
+*.pyc
+staticfiles
+.env
