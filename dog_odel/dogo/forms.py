@@ -52,3 +52,11 @@ def log(request):
         return HttpResponse("You're logged in." + str(request.session['id']))
     else:
         return HttpResponse("Your username and password didn't match.")
+
+
+def logout(request):
+    try:
+        del request.session['id']
+    except KeyError:
+        pass
+    return HttpResponse("You're logged out.")
