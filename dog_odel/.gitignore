@@ -2,4 +2,3 @@ jojo
 *.pyc
 staticfiles
 .env
-/dogo/db.sqlite3

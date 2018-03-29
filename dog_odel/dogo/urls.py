@@ -5,6 +5,7 @@ from .models import *
 app_name='dogo'
 
 urlpatterns = [
+	url(r'^$', views.index, name='index'),
 	url(r'^index$', views.index, name='index'),
 	url(r'^formu$', views.formu),
 	url(r'^subscribe', views.formu_submit),
