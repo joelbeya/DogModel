@@ -24,7 +24,7 @@ class SuperClass(models.Model):
         abstract = True
 
 
-class Race(models.Model):
+class Race(SuperClass):
     nom = models.CharField(max_length = 255)
     taille = models.IntegerField()
     morphologie = models.CharField(max_length = 255)
