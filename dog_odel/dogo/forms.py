@@ -4,6 +4,7 @@ from django.contrib.auth.hashers import *
 from .models import *
 from datetime import datetime
 from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import redirect
 
 class Subscribe(forms.Form):
     mail = forms.EmailField(label='Your e-mail', max_length=100)
@@ -49,6 +50,14 @@ def log(request):
 
     if check_password(request.POST['password'], m.password):
         request.session['id'] = m.id
-        return HttpResponse("You're logged in." + str(request.session['id']))
+        return redirect('/dogo/index')
     else:
         return HttpResponse("Your username and password didn't match.")
+
+
+def logout(request):
+    try:
+        logout(request)
+    except KeyError:
+        pass
+    return redirect('/dogo/index')

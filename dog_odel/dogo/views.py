@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import *
 from .forms import *
 import sys
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -30,3 +31,6 @@ def login(request):
 
 def sub(request):
 	return log(request)
+
+def log_out(request):
+    return logout(request)
