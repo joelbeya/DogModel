@@ -25,7 +25,7 @@ SECRET_KEY = 'd5^2$%cduv*^8(08_9lppc10wpa4++*_ekn@%+xsfobp+ws7j5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['dogomodel.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -112,8 +112,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
 
 INTERNAL_IPS = ['127.0.0.1']
