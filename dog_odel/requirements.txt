@@ -1,0 +1,8 @@
+Django==2.0.2
+django-debug-toolbar==1.9.1
+django-extensions==2.0.2
+gunicorn==19.7.1
+pytz==2018.3
+six==1.11.0
+sqlparse==0.2.4
+typing==3.6.4
