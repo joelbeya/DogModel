@@ -55,9 +55,3 @@ def log(request):
         return HttpResponse("Your username and password didn't match.")
 
 
-def logout(request):
-    try:
-        logout(request)
-    except KeyError:
-        pass
-    return redirect('/dogo/index')
