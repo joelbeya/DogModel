@@ -1,0 +1,7 @@
+Django==2.0.2
+django-debug-toolbar==1.9.1
+-e git+https://github.com/django-extensions/django-extensions.git@92dc1385b871607ab300072051e9c5531a494b8d#egg=django_extensions-origin/master
+pytz==2018.3
+six==1.11.0
+sqlparse==0.2.4
+typing==3.6.4
