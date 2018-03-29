@@ -57,7 +57,7 @@ def log(request):
 
 def logout(request):
     try:
-        del request.session['id']
+        logout(request)
     except KeyError:
         pass
     return redirect('/dogo/index')
