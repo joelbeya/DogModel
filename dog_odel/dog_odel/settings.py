@@ -25,7 +25,7 @@ SECRET_KEY = 'd5^2$%cduv*^8(08_9lppc10wpa4++*_ekn@%+xsfobp+ws7j5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dogomodel.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
