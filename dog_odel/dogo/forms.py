@@ -38,8 +38,8 @@ def affiche(request):
     date_naissance = request.POST['birth']
 
     User.objects.create(mail=mail, password=password, nom=nom, prenom=prenom, sexe=sexe, date_naissance=date_naissance)
-    
-    return HttpResponse("Vous avez été enregistré !")
+
+    return redirect('/dogo/index')
 
 
 def log(request):
@@ -53,5 +53,3 @@ def log(request):
         return redirect('/dogo/index')
     else:
         return HttpResponse("Your username and password didn't match.")
-
-
