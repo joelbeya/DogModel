@@ -7,7 +7,7 @@ from django.contrib.auth import logout
 # Create your views here.
 
 def index(request):
-    objets = Chien.objects.all();
+    objets = Chien.objects.order_by('-created_at');
     return render(request, 'dogo/index.html', {'objets':objets})
 
 def requete(request,obj):

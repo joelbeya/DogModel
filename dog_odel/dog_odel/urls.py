@@ -19,9 +19,11 @@ from django.contrib import admin
 from django.conf.urls import url, include, handler404, handler500
 from django.urls import path
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-handler404 = 'dog_MO.views.handler404'
-handler500 = 'dog_MO.views.handler500'
+
+handler404 = 'dog_odel.views.handler404'
+handler500 = 'dog_odel.views.handler500'
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
@@ -30,6 +32,8 @@ urlpatterns = [
     url(r'^dogo/', include('dogo.urls')),
     path('admin/', admin.site.urls),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
 
 if settings.DEBUG:
     import debug_toolbar

@@ -14,6 +14,4 @@ urlpatterns = [
 	url(r'^logout', views.log_out),
     url(r'^(?P<obj>[A-Za-z]*)$', views.requete),
     url(r'^(?P<obj>[A-Za-z]*)/(?P<key>[0-9]*)$', views.show),
-
-
 ]
