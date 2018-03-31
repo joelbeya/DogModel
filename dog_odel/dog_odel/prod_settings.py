@@ -16,6 +16,4 @@ MIDDLEWARE += [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-SECRET_KEY = '2pj0w-+ouhi&!^pkdt*nnc#$*zv$zmbkm)qsh(#uit!&hn%_*&'
-
 ALLOWED_HOSTS = ['dogomodel.herokuapp.com', 'localhost']
