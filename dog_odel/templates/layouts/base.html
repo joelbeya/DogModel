@@ -42,7 +42,7 @@
             showAnim: "slideDown",
             yearSuffix: ''};
             $.datepicker.setDefaults($.datepicker.regional['fr'])
-            $( "#id_birth" ).datepicker({ minDate: "-15Y", maxDate: "-100Y" });
+            $( "#id_birth" ).datepicker({ minDate: "-180M", maxDate: "-1200M" });
         } );
     </script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -51,6 +51,7 @@
 
 <body>
 
+    {% include 'layouts/_navbar.html' %}
     {% include 'layouts/header.html' %}
     {% block content %}{% endblock content %}
     {% include 'layouts/footer.html' %}
