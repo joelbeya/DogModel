@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+<<<<<<< HEAD
 # from .forms import UploadFileForm
 from django.http import HttpResponseRedirect
 # from somewhere import handle_uploaded_file
+=======
+from django.http import HttpResponseRedirect
+>>>>>>> 4668362a71b6be8d61a190480d7d3126bf230ae0
 
 def home(request):
     return render(request, 'pages/home.html')

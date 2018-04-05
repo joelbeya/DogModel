@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
-from .forms import *
 import sys
-from django.contrib.auth import logout
+from django.contrib.auth import logout, get_user
+from django.http import *
+from django.contrib.auth.hashers import *
+from datetime import datetime
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 
@@ -20,18 +23,36 @@ def show(request, obj, key):
     objet = identifier.find(int(key))
     return render(request, 'dogo/show.html', {'objet':objet})
 
-def formu(request):
-	return render(request, 'dogo/formu.html', {'form':Subscribe})
-
 def formu_submit(request):
-	return affiche(request)
+    mail = request.POST['mail']
+    password = make_password(request.POST['password'])
+    nom = request.POST['name']
+    prenom = request.POST['first_name']
+    sexe = request.POST['sexe']
+    date_naissance = request.POST['birth']
+    
+    User.objects.create(mail=mail, password=password, nom=nom, prenom=prenom, sexe=sexe, date_naissance=date_naissance)
+    return redirect('/dogo/index')
 
-def login(request):
-	return render(request, 'dogo/login.html', {'form':Login})
+def log(request):
+    try:
+        m = User.objects.get(mail=request.POST['mail'])
+    except ObjectDoesNotExist:
+        return HttpResponse("Your username and password didn't match.")
 
-def sub(request):
-	return log(request)
+    if check_password(request.POST['password'], m.password):
+        request.session['id'] = m.id
+        return redirect('/dogo/index')
+    else:
+        return HttpResponse("Your username and password didn't match.")
 
 def log_out(request):
+    request = HttpRequest()
+    engine = import_module(settings.SESSION_ENGINE)
+    if self.session:
+        request.session = self.session
+        request.user = get_user(request)
+    else:
+        request.session = engine.SessionStore()
     logout(request)
-    return redirect(reverse(login))
+    self.cookies = SimpleCookie() 
