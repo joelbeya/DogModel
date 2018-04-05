@@ -2,7 +2,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <ul class="nav navbar-nav navbar-left">
-            <span id="index_span"><a href="{% url 'dogo:index' %}"><img src="{% static 'dogo/img/dog-paw.svg' %}" alt="Accueil" title="Accueil" width="40px"/></a></span>
+            <span id="index_span"><a href="{% url 'dogo:index' %}"><img src="{% static 'img/dog-paw.svg' %}" alt="Accueil" title="Accueil" width="40px"/></a></span>
         </ul>
         {% if user.is_authenticated %}
         <ul class="nav navbar-nav navbar-right">
