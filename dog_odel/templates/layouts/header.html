@@ -1,0 +1,35 @@
+<<<<<<< HEAD
+=======
+<header>
+    {% load static %}
+    <nav class="navbar navbar-default">
+<<<<<<< HEAD
+      <div class="container-fluid">
+        <span id="index_span"><a href="{% url 'dogo:index' %}"><img src="{% static 'dogo/img/dog-paw.svg' %}" alt="Accueil" title="Accueil" width="40px"/></a></span>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a onclick="'dogo/login.html'.style.display='block'" data-toggle="modal" href="dogo/formu views.formu #modal_inscription"><span class="glyphicon glyphicon-user"></span>Inscription</a> {% include 'dogo/formu.html' %}</li>
+          <li><a onclick="'dogo/formu.html'.style.display='block'" data-toggle="modal" href="dogo/login views.formu_submit #modal_connexion"><span class="glyphicon glyphicon-log-in"></span>Connexion</a> {% include 'dogo/login.html' %}</li>
+        </ul>
+      </div>
+=======
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-left">
+                <span id="index_span"><a href="{% url 'dogo:index' %}"><img src="{% static 'dogo/img/dog-paw.svg' %}" alt="Accueil" title="Accueil" width="40px"/></a></span>
+            </ul>
+            {% if user.is_authenticated %}
+            <ul class="nav navbar-nav navbar-right">
+                <li><a data-toggle="modal" href="dogo/formu views.formu #modal_inscription"><span class="glyphicon glyphicon-user"></span>{{user.name}}</a></li>
+                <li><a data-toggle="modal" href="/dogo/logout"><span class="glyphicon glyphicon-log-in"></span>Deconnexion</a></li>
+            </ul>
+            {% else %}
+            <ul class="nav navbar-nav navbar-right">
+                <li><a data-toggle="modal" href="dogo/formu views.formu #modal_inscription"><span class="glyphicon glyphicon-user"></span>Inscription</a></li>
+                <li><a data-toggle="modal" href="dogo/login views.formu_submit #modal_connexion"><span class="glyphicon glyphicon-log-in"></span>Connexion</a></li>
+            </ul>
+            {% endif %}
+        </div>
+>>>>>>> 78a3f907c7005815b4a58a9cd5e40cbe0adbeff0
+    </nav>
+</header>
+>>>>>>> 518e9a9d0993c262d7134c1ab0789c3066a4c238
