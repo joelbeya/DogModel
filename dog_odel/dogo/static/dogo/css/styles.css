@@ -4,10 +4,10 @@ body, html {
     line-height: 1.8;
 }
 /* Full height image header */
-.bgimg-1 {
+body {
     background-position: center;
     background-size: cover;
-    background-image: url("/w3images/mac.jpg");
+    background-image: url("img/dogo1.jpeg") no-repeat;
     min-height: 100%;
 }
 .w3-bar .w3-button {

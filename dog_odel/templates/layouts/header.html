@@ -1,25 +1,22 @@
-<header>
-    {% load static %}
-    <nav class="navbar navbar-default">
+{% load static %}
+<nav class="navbar navbar-default">
 
-        <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-left">
-                <span id="index_span"><a href="{% url 'dogo:index' %}"><img src="{% static 'dogo/img/dog-paw.svg' %}" alt="Accueil" title="Accueil" width="40px"/></a></span>
-            </ul>
-            {% if user.is_authenticated %}
-            <ul class="nav navbar-nav navbar-right">
-                <li><a data-toggle="modal" href="dogo/formu views.formu #modal_inscription"><span class="glyphicon glyphicon-user"></span>{{user.name}}</a></li>
-                <li><a data-toggle="modal" href="/dogo/logout"><span class="glyphicon glyphicon-log-in"></span>Deconnexion</a></li>
-            </ul>
-            {% else %}
-            <ul class="nav navbar-nav navbar-right">
-                <li><a data-toggle="modal" href="dogo/formu views.formu #modal_inscription"><span class="glyphicon glyphicon-user"></span>Inscription</a></li>
-                <li><a data-toggle="modal" href="dogo/login views.formu_submit #modal_connexion"><span class="glyphicon glyphicon-log-in"></span>Connexion</a></li>
-            </ul>
-            {% endif %}
-        </div>
-    </nav>
-</header>
-
+    <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-left">
+            <span id="index_span"><a href="{% url 'dogo:index' %}"><img src="{% static 'dogo/img/dog-paw.svg' %}" alt="Accueil" title="Accueil" width="40px"/></a></span>
+        </ul>
+        {% if user.is_authenticated %}
+        <ul class="nav navbar-nav navbar-right">
+            <li><a data-toggle="modal" href="dogo/formu views.formu #modal_inscription"><span class="glyphicon glyphicon-user"></span>{{user.name}}</a></li>
+            <li><a data-toggle="modal" href="/dogo/logout"><span class="glyphicon glyphicon-log-in"></span>Deconnexion</a></li>
+        </ul>
+        {% else %}
+        <ul class="nav navbar-nav navbar-right">
+            <li><a data-toggle="modal" href="dogo/formu views.formu #modal_inscription"><span class="glyphicon glyphicon-user"></span>Inscription</a></li>
+            <li><a data-toggle="modal" href="dogo/login views.formu_submit #modal_connexion"><span class="glyphicon glyphicon-log-in"></span>Connexion</a></li>
+        </ul>
+        {% endif %}
+    </div>
+</nav>
 {% include 'dogo/login.html' %}
 {% include 'dogo/formu.html' %}

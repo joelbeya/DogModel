@@ -243,3 +243,13 @@ footer p {
     float: left;
     display: block;
 }
+
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("img/dogo1.jpeg");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
