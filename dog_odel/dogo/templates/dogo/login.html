@@ -9,8 +9,8 @@
                 </div>
                 <div class="modal-body">
                     {% csrf_token %}
-                    <p><label for="id_mail">Your e-mail :</label> <input type="email" name="mail" id="id_mail" required maxlength="100" /></p>
-                    <p><label for="id_password">Password :</label> <input type="password" name="password" id="id_password" required /></p>
+                    <p><input type="email" name="mail" placeholder="E-mail" id="id_mail" required maxlength="100" /></p>
+                    <p><input type="password" name="password" placeholder="Mot de passe" id="id_password" required /></p>
                     <input type="submit" value="Submit" />
                 </div>
                 <div class="modal-footer">
