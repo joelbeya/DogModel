@@ -30,7 +30,7 @@ def formu_submit(request):
     prenom = request.POST['first_name']
     sexe = request.POST['sexe']
     date_naissance = request.POST['birth']
-    
+
     User.objects.create(mail=mail, password=password, nom=nom, prenom=prenom, sexe=sexe, date_naissance=date_naissance)
     return redirect('/dogo/index')
 
@@ -55,4 +55,4 @@ def log_out(request):
     else:
         request.session = engine.SessionStore()
     logout(request)
-    self.cookies = SimpleCookie() 
+    self.cookies = SimpleCookie()
