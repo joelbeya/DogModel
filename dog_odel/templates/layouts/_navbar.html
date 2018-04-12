@@ -1,21 +1,54 @@
 {% load static %}
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav navbar-left">
-            <span id="index_span"><a href="{% url 'dogo:index' %}"><img src="{% static 'img/dog-paw.svg' %}" alt="Accueil" title="Accueil" width="40px"/></a></span>
-        </ul>
-        {% if user.is_authenticated %}
-        <ul class="nav navbar-nav navbar-right">
-            <li><a data-toggle="modal" href="dogo/formu views.formu #modal_inscription"><span class="glyphicon glyphicon-user"></span>{{user.name}}</a></li>
-            <li><a data-toggle="modal" href="/dogo/logout"><span class="glyphicon glyphicon-log-in"></span>Deconnexion</a></li>
-        </ul>
-        {% else %}
-        <ul class="nav navbar-nav navbar-right">
-            <li><a data-toggle="modal" href="dogo/formu views.formu #modal_inscription"><span class="glyphicon glyphicon-user"></span>Inscription</a></li>
-            <li><a data-toggle="modal" href="dogo/login views.formu_submit #modal_connexion"><span class="glyphicon glyphicon-log-in"></span>Connexion</a></li>
-        </ul>
-        {% endif %}
+{% block content %}
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="{% url 'dogo:index' %}" class="w3-bar-item w3-button"><img src="{% static 'img/dogo3.svg' %}" alt="Accueil" title="Accueil" width="27px"/>___<b>DoggyBook</b>___</a>
+    <!-- Right-sided navbar links -->
+    {% if request.user.is_authenticated %}
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="{% url 'about' %}" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> ABOUT</a>
+      <a href="{% url 'contact' %}" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> TEAM</a>
+      <a data-toggle="modal" href="{% url 'profilmembre' %}" class="w3-bar-item w3-button"><i class="fa fa-user"></i> {{user.first_name.upper}}</a>
+      <a data-toggle="modal" href="/dogo/logout" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> DECONNEXION</a>
+      <a href="#" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey"><i class="fa fa-search"></i></a>
     </div>
+    {% else %}
+    <div class="w3-right w3-hide-small">
+      <a href="{% url 'about' %}" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> ABOUT</a>
+      <a href="{% url 'contact' %}" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> TEAM</a>
+      <a data-toggle="modal" href="dogo/formu views.formu #modal_inscription" class="w3-bar-item w3-button"><i class="fa fa-user"></i> INSCRIPTION</a>
+      <a data-toggle="modal" href="dogo/login views.formu_submit #modal_connexion" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> CONNEXION</a>
+      <a href="#" class="w3-bar-item w3-button w3-right w3-hover-red w3-text-grey"><i class="fa fa-search"></i></a>
+    </div>
+    {% endif %}
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a data-toggle="modal" href="javascript:void(0); {% url 'profilmembre' %}" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"><i class="fa fa-user"></i> {{user.first_name}}</a>
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  {% if request.user.is_authenticated %}
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="{% url 'about' %}" onclick="w3_close()" class="w3-bar-item w3-button"> ABOUT</a>
+  <a href="{% url 'contact' %}" onclick="w3_close()" class="w3-bar-item w3-button"> TEAM</a>
+  <a data-toggle="modal" href="{% url 'profilmembre' %}" onclick="w3_close()" class="w3-bar-item w3-button"> {{user.first_name.upper}}</a>
+  <a data-toggle="modal" href="/dogo/logout" onclick="w3_close()" class="w3-bar-item w3-button"> DECONNEXION</a>
+  {% else %}
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="{% url 'about' %}" onclick="w3_close()" class="w3-bar-item w3-button"> ABOUT</a>
+  <a href="{% url 'contact' %}" onclick="w3_close()" class="w3-bar-item w3-button"> TEAM</a>
+  <a data-toggle="modal" href="dogo/formu views.formu #modal_inscription" onclick="w3_close()" class="w3-bar-item w3-button"> INSCRIPTION</a>
+  <a data-toggle="modal" href="dogo/login views.formu_submit #modal_connexion" onclick="w3_close()" class="w3-bar-item w3-button"> CONNEXION</a>
+  {% endif %}
+</nav>
+
+
+
     {% include 'dogo/login.html' %}
     {% include 'dogo/formu.html' %}
-</nav>
+{% endblock content %}

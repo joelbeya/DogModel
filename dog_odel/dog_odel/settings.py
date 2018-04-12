@@ -36,6 +36,8 @@ SECRET_KEY = get_env_variable('SECRET_KEY', 'd5^2$%cduv*^8(08_9lppc10wpa4++*_ekn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+
 ALLOWED_HOSTS = []
 
 

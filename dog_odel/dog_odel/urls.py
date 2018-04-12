@@ -1,4 +1,4 @@
-"""dog_MO URL Configuration
+"""Dog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -13,14 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
-from django.conf import settings
 from django.contrib import admin
-from django.conf.urls import url, include, handler404, handler500
+from django.conf.urls import url, include, handler404,handler500
 from django.urls import path
 from . import views
+from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
 
 handler404 = 'dog_odel.views.handler404'
 handler500 = 'dog_odel.views.handler500'
@@ -29,6 +27,7 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^about$', views.about, name='about'),
     url(r'^contact$', views.contact, name='contact'),
+    url(r'^profilmembre$', views.profilmembre, name='profilmembre'),
     url(r'^dogo/', include('dogo.urls')),
     path('admin/', admin.site.urls),
 ]

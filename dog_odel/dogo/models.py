@@ -28,14 +28,14 @@ class Race(SuperClass):
     nom = models.CharField(max_length = 255)
     taille = models.IntegerField()
     morphologie = models.CharField(max_length = 255)
-    traits_comportementaux = models.CharField(max_length = 255)
+    comportement = models.CharField(max_length = 255)
 
 
 
 class Proprietaire(SuperClass):
     nom = models.CharField(max_length=255)
     prenom = models.CharField(max_length=255, null=True)
-    date_naissance= models.DateField()
+    date_naissance = models.DateField()
     adresse = models.CharField(max_length=255)
     sexe = models.BooleanField()
 
@@ -46,18 +46,8 @@ class Chien(SuperClass):
     date_naissance = models.DateField()
     couleur_poils = models.CharField(max_length=255)
     couleur_yeux = models.CharField(max_length=255)
-    sexe = models.CharField(max_length=1)
+    sexe = models.BooleanField()
     proprio = models.ForeignKey(Proprietaire,on_delete=models.CASCADE)
     race = models.ForeignKey(Race,on_delete=models.CASCADE)
     pere = models.ForeignKey('self', on_delete=models.CASCADE,null=True,blank=True,related_name='enfant_pere')
     mere = models.ForeignKey('self', on_delete=models.CASCADE,null=True,blank=True,related_name='enfant_mere')
-
-
-
-class User(SuperClass):
-    mail = models.CharField(max_length=255)
-    password = models.CharField(max_length=500)
-    nom = models.CharField(max_length=255)
-    prenom = models.CharField(max_length=255)
-    sexe = models.CharField(max_length=1)
-    date_naissance = models.DateField()
