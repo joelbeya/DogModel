@@ -2,7 +2,7 @@ import dj_database_url
 
 from .settings import *
 
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = False
 
@@ -16,4 +16,4 @@ MIDDLEWARE += [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'doggybook.herokuapp.com']
+ALLOWED_HOSTS = ['doggybook.herokuapp.com', '127.0.0.1', 'localhost']

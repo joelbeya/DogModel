@@ -11,7 +11,7 @@ from django.contrib.auth import *
 
 
 def index(request):
-    objets = Chien.objects.order_by('-created_at');
+    objets = Chien.objects.order_by('created_at');
     return render(request, 'dogo/index.html', {'objets':objets})
 
 

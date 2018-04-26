@@ -3,7 +3,7 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="{% url 'dogo:index' %}" class="w3-bar-item w3-button"><img src="{% static 'img/dogo3.svg' %}" alt="Accueil" title="Accueil" width="27px"/>___<b>DoggyBook</b>___</a>
+    <a href="{% url 'home' %}" class="w3-bar-item w3-button"><img src="{% static 'img/dogo3.png' %}" alt="Accueil" title="Accueil" width="27px"/><b>  DoggyBook</b></a>
     <!-- Right-sided navbar links -->
     {% if request.user.is_authenticated %}
     <!-- Right-sided navbar links -->

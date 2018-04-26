@@ -1,10 +1,13 @@
 {% extends 'layouts/base.html' %}
 
-  {% block content %}
-  <h1> On a {{objets|length}} objets </h1>
+{% block content %}
 
- <a href="{% url 'home' %}">Bon zonga ndaku, Rwandais !</a>
- <a href="/dogo/Chien">Liste des Chiens</a>
- <a href="/dogo/Proprietaire">Liste des Proprietaires</a>
- <a href="/dogo/Race">Liste des Races</a>
-  {% endblock content %}
+<h1> On a {{objets|length}} objets </h1>
+
+<a href="{% url 'home' %}">Bon zonga ndaku, Rwandais !</a>
+<a href="/doggybook/Chien">Liste des Chiens</a>
+<a href="/doggybook/Proprietaire">Liste des Proprietaires</a>
+<a href="{% url 'gestionMembre' %}"> Page de Gestion </a>
+<a href="/doggybook/Race">Liste des Races</a>
+
+{% endblock content %}
